@@ -1,101 +1,96 @@
+"use client";
+import Logo from "@/src/components/logo";
+import PrivacidadBoton from "@/src/components/privacidadBoton";
+import TerminosBoton from "@/src/components/terminosBoton";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen flex flex-col px-4 py-2">
+      {/* Fondo rosa */}
+      <div className="absolute top-0 left-1/2 h-full w-[50vw] bg-customPink opacity-30 z-[-1]"></div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <header className="flex justify-between items-center">
+        <div className="ml-5 mt-3">
+          <Logo />
+        </div>
+        <div className="md:space-x-4 mr-10">
+          <button className="px-4 py-2 bg-transparent rounded-lg hover:bg-slate-50 transition">
+            Iniciar Sesión
+          </button>
+          <button className="px-4 py-2 bg-blue-950 rounded-lg hover:bg-blue-900 transition font-bold text-white shadow-xl">
+            Registrarse
+          </button>
+        </div>
+      </header>
+
+      <main className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+        <div className="pl-4 md:pl-14">
+          <h1 className="text-4xl md:text-6xl font-bold text-blue-950 font-serif leading-[3rem] md:leading-[5rem]">
+            <p style={{ textShadow: "3px 3px 0px #EC939F" }}>
+              <span
+                style={{ textShadow: "3px 3px 0px #172554" }}
+                className="text-customPink"
+              >
+                S
+              </span>
+              in pre-requisitos,
+            </p>
+            <p style={{ textShadow: "3px 3px 0px #EC939F" }}>
+              <span
+                style={{ textShadow: "3px 3px 0px #172554" }}
+                className="text-customPink"
+              >
+                S
+              </span>
+              in trámites,
+            </p>
+            <p style={{ textShadow: "3px 3px 0px #EC939F" }}>
+              <span
+                style={{ textShadow: "3px 3px 0px #172554" }}
+                className="text-customPink"
+              >
+                S
+              </span>
+              olo amor directo.
+            </p>
+          </h1>
+          <p className="mt-4 text-lg text-justify leading-[2rem] md:pr-40">
+            Encuentra a alguien que entienda tus desvelos, tus parciales y tu
+            amor por el estudio. Aquí no hay exámenes ni listas de espera, solo
+            conexiones genuinas.
+          </p>
+          <div className="flex justify-center w-full mt-6">
+            <button className="mt-6 px-4 py-2 bg-customPink rounded-lg hover:bg-pink-300 transition font-bold text-white shadow-xl">
+              ¡Empieza a buscar!
+            </button>
+          </div>
+          <div className="mt-4 text-center md:text-center">
+            <p className="text-gray-600 hover:text-gray-950 underline">
+              <TerminosBoton />
+            </p>
+            <p className="text-gray-600 hover:text-gray-950 mt-2 underline">
+              <PrivacidadBoton />
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-end justify-end">
+          <Image
+            src="/img/tolin_cesar.png"
+            alt="tolin_cesar"
+            width={500}
+            height={500}
+            objectFit="contain"
+            layout="responsive"
+            quality={100}
+            className="self-end"
+          />
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      {/* Línea morada abajo*/}
+      <div className="w-full h-2 bg-gradient-to-r from-purple-300 via-purple-400 to-purple-300 shadow-lg"></div>
     </div>
   );
 }

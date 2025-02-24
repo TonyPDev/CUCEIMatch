@@ -11,6 +11,11 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        customPink: "#EC939F",
+        customPink2: "#C594AA",
+      },
+      textShadow: {
+        pink: "3px 3px 5px #EC939F",
       },
     },
   },

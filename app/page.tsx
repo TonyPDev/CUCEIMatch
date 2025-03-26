@@ -2,9 +2,24 @@
 import Logo from "@/src/components/logo";
 import PrivacidadBoton from "@/src/components/privacidadBoton";
 import TerminosBoton from "@/src/components/terminosBoton";
+import { auth } from "@/src/database/firebaseConfiguration";
+import { onAuthStateChanged } from "firebase/auth";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleRegister = () => {
+    router.push("/register");
+  };
+
+  const handleLogin = () => {
+    router.push("/login");
+  };
+
+
   return (
     <div className="min-h-screen flex flex-col px-4 py-2">
       {/* Fondo rosa */}
@@ -15,10 +30,16 @@ export default function Home() {
           <Logo />
         </div>
         <div className="md:space-x-4 mr-10">
-          <button className="px-4 py-2 bg-transparent rounded-lg hover:bg-slate-50 transition">
+          <button
+            onClick={handleLogin}
+            className="px-4 py-2 bg-transparent rounded-lg hover:bg-slate-50 transition"
+          >
             Iniciar Sesión
           </button>
-          <button className="px-4 py-2 bg-blue-950 rounded-lg hover:bg-blue-900 transition font-bold text-white shadow-xl">
+          <button
+            onClick={handleRegister}
+            className="px-4 py-2 bg-blue-950 rounded-lg hover:bg-blue-900 transition font-bold text-white shadow-xl"
+          >
             Registrarse
           </button>
         </div>
@@ -61,7 +82,10 @@ export default function Home() {
             conexiones genuinas.
           </p>
           <div className="flex justify-center w-full mt-6">
-            <button className="mt-6 px-4 py-2 bg-customPink rounded-lg hover:bg-pink-300 transition font-bold text-white shadow-xl">
+            <button
+              onClick={handleLogin}
+              className="mt-6 px-4 py-2 bg-customPink rounded-lg hover:bg-pink-300 transition font-bold text-white shadow-xl"
+            >
               ¡Empieza a buscar!
             </button>
           </div>
